@@ -12,7 +12,7 @@
 	],
 	"require": {
 		"php": ">=8.0",
-		"digicreon/temma-lib": "0.0.2",
+		"digicreon/temma-lib": "2.10.0",
 		"smarty/smarty": ">=5.4.0"
 	},
 	"config": {
