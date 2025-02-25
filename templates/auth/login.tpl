@@ -49,7 +49,7 @@
 			// set the anti-spam hash
 			var loginTime = Date.now();
 			var timeDiff = loginTime - loadTime;
-			var hash = MD5(timeDiff + ":" + loginTime + ":" + email.value + ":" + window.navigator.userAgent);
+			var hash = MD5(timeDiff + ":" + loginTime + ":" + form.email.value + ":" + window.navigator.userAgent);
 			form.hash.value = timeDiff + "#" + loginTime + "#" + hash;
 			return (true);
 		}
@@ -76,15 +76,15 @@
 	{* management of authentication statuses *}
 	{if $__authStatus}
 		<h4>
-			{if $authStatus == 'logout'}
+			{if $__authStatus == 'logout'}
 				You have been disconnected
-			{elseif $authStatus == 'email'}
+			{elseif $__authStatus == 'email'}
 				Invalid email address
-			{elseif $authStatus == 'tokenSent'}
+			{elseif $__authStatus == 'tokenSent'}
 				If the email address is valid, you will receive a connection link
-			{elseif $authStatus == 'badToken'}
+			{elseif $__authStatus == 'badToken'}
 				Expired connection token
-			{elseif $authStatus == 'robot'}
+			{elseif $__authStatus == 'robot'}
 				You have been detected as a robot, please try again
 			{else}
 				An error occurred
